@@ -1,0 +1,29 @@
+
+.bgcolor
+{
+	background-color:rgba(0,0,0,.2); 
+}
+.nav-link
+{
+	color: white;
+}
+.navbar-brand
+{
+	color: white;
+}
+.headimage
+{
+	background-size: cover;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+		
+}
+.user-inner{
+	border:1px solid black !important;
+	padding: 40px;
+}
+.worker-inner{
+	border:1px solid black !important;
+	padding: 40px;
+}
