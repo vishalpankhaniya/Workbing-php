@@ -6,29 +6,33 @@ $conn=new mysqli('localhost','root','','workbing');
 <div class="container-fluid">
 	<div class="container">
 
-	<h1 class="text-center" style="margin-top: 100px;">Our Services</h1>
+		<h1 class="text-center" style="margin-top: 100px;">Our Services</h1>
 
-	<div class="row text-center">
+		<div class="row text-center">
+
+			<?php
+			$sql1="SELECT * from category"; 
+			$res=$conn->query($sql1);
+			while($re=$res->fetch_object())
+			{
+				?>      
+
+				<div class="col-md-4">
+					<a href="search.php?cid=<?php echo $re->cid; ?>">
+
+						<div class="category">
+							<img class="img-fluid" src="<?php echo $re->url;?>"/></a>
+						</div>
+						<h4><?php echo $re->cname;?></h4>
+					</div>
 
 					<?php
-        				$sql1="SELECT * from category"; 
-        				$res=$conn->query($sql1);
-       	 				while($re=$res->fetch_object())
-        				{
-    				 ?>      
-	
-				<div class="col-md-4">
-					<a href="search.php?cid=<?php echo $re->cid; ?>"><img src="<?php echo $re->url;?>"/></a>
-						<h4><?php echo $re->cname;?></h4>
-				</div>
-				
-				<?php
-						}
-					?>
+				}
+				?>
 			</div>
-</div>
-</div>
+		</div>
+	</div>
 
-<?php
+	<?php
 	include("footer.php");
-?>
+	?>

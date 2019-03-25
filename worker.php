@@ -3,7 +3,7 @@ include("header.php");
 ?>
 
 <?php
-$conn=new mysqli('localhost','root','','workbing');
+include "config.php";
 if (isset($_POST['submit']))
 {
 	$fname=$_POST['fname'];
